@@ -1,7 +1,7 @@
 export interface Category {
 	id: number;
-	categorie_id: number;
-	publication_id: number;
-	utilisateur_id: number;
+	id_categorie: number;
+	id_publication: number;
+	id_utilisateur: number;
 	date: Date;
 }
