@@ -24,4 +24,8 @@ export class DataService {
     return data.categorie;
   }
 
+  public get users(): any {
+    return data.utilisateur;
+  }
+
 }

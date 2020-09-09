@@ -38,15 +38,23 @@ export class PostService {
     let responses = this.data.responses;
     let features = this.data.features;
     let categories = this.data.categories;
+    let users = this.data.users;
 
     posts.forEach((post: any) => {
       let onePost = post;
       onePost.responses = [];
       onePost.features = [];
+      onePost.user = {};
 
       responses.forEach((response: any) => {
         if (response.id_publication === post.id) {
           onePost.responses.push(response);
+        }
+      });
+
+      users.forEach((user: any) => {
+        if (user.id === post.id_utilisateur) {
+          onePost.user = user;
         }
       });
 

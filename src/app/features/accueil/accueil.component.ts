@@ -16,6 +16,7 @@ export class AccueilComponent implements OnInit {
 
   ngOnInit(): void {
     this.postsList = this.postService.forHomePage;
+    console.log(this.postsList);
   }
 
 }
