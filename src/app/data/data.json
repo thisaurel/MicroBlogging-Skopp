@@ -24,7 +24,7 @@
 			"id_utilisateur": 1,
 			"contenue" : "Dans trois mois jour pour jour tu auras ton Palais.",
 			"date" : "2020-09-09 12:13:20",
-			"nb_like": "55",
+			"nb_like": 55,
 			"piece_jointe": ""
 		},
 		{
@@ -32,7 +32,7 @@
 			"id_utilisateur": 2,
 			"contenue" : "C'est trop calme... j'aime pas trop beaucoup ça... J'préfère quand c'est un peu trop plus moins calme...",
 			"date" : "2020-09-09 16:13:20",
-			"nb_like": "88",
+			"nb_like": 88,
 			"piece_jointe": ""
 		}
 	],
