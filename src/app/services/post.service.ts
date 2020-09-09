@@ -116,14 +116,6 @@ export class PostService {
     let categories = this.data.categories;
     let users = this.data.users;
 
-    posts.forEach((post: any) => {
-      features.forEach((feature: any) => {
-        if (feature.id_categorie === 1) {
-
-        }
-      });
-    });
-
     return savePageObject;
   }
 
