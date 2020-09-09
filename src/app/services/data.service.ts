@@ -20,4 +20,8 @@ export class DataService {
     return data.fonctionnalite;
   }
 
+  public get categories(): any {
+    return data.categorie;
+  }
+
 }

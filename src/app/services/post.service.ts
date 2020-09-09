@@ -37,6 +37,7 @@ export class PostService {
     let posts = this.data.posts;
     let responses = this.data.responses;
     let features = this.data.features;
+    let categories = this.data.categories;
 
     posts.forEach((post: any) => {
       let onePost = post;
@@ -50,9 +51,15 @@ export class PostService {
       });
 
       features.forEach((feature: any) => {
+        feature.type = null;
         if (feature.id_publication === post.id) {
           onePost.features.push(feature);
         }
+        categories.forEach((category: any) => {
+          if (feature.id_categorie === category.id) {
+            feature.type = category.nom;
+          }
+        });
       });
 
       homePageObject.push(onePost);
