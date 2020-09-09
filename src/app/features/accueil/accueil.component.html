@@ -23,12 +23,12 @@
         </div>
       </div>
       <div class="ml-5 mb-3" *ngIf="post.responseActive === true">
-        <form class="form" [formGroup]="responseForm" (ngSubmit)="reponseSkopp()">
+        <form class="form" [formGroup]="responseForm" (ngSubmit)="reponseSkopp(post.id)">
             <div class="form-group">
                 <textarea class="form-control" formControlName="reponseInput" rows="3" placeholder="Tapez votre réponse à ce Skopp..."></textarea>
             </div>
         </form>
-        <button type="button" class="btn btn-primary" (click)="reponseSkopp()">Répondre au Skopp <i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+        <button type="button" class="btn btn-primary" (click)="reponseSkopp(post.id)">Répondre au Skopp <i class="fa fa-paper-plane" aria-hidden="true"></i></button>
       </div>
       
         <div class="card mb-3 ml-5" *ngFor="let response of post.responses.slice().reverse()">

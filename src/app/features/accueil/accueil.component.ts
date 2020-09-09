@@ -48,7 +48,23 @@ export class AccueilComponent implements OnInit {
     }
   }
 
-  public addFeatureToPost(postId: number, category: number) {
+  public reponseSkopp(post_id: number): void {
+    const skopp = this.responseForm.value.reponseInput;
+    if (typeof skopp === 'string' ) {
+      if (skopp !== '') {
+        const mySkopp = {
+          id: post_id,
+          content: skopp,
+        }
+        console.log(post_id);
+        this.postService.createReponse(mySkopp);
+        this.postsList = this.postService.forHomePage;
+        this.responseForm.reset();
+      }
+    }
+  }
+
+  public addFeatureToPost(postId: number, category: number): void {
     this.postService.createFeature(postId, category);
   }
 

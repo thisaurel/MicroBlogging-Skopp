@@ -31,6 +31,22 @@ export class PostService {
     this.data.posts.push(newPost);
   }
 
+  public createReponse(post: any): void {
+    let lastResponse = this.data.responses.slice(-1)[0];
+    let newId = (lastResponse != null) ? lastResponse.id + 1 : 0;
+    let d = new Date();
+    let datestring = d.getFullYear()  + "-" + (d.getMonth()+1) + "-" + d.getDate() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+    let newResponse: any = {
+      id: newId,
+      id_publication: post.id,
+      id_utilisateur: 1,
+      date: datestring,
+      contenu: post.content,
+    };
+    console.log(newResponse);
+    this.data.responses.push(newResponse);
+  }
+
   public createFeature(id_publication: number, category: number) {
     let lastFunctionality = this.data.features.slice(-1)[0];
     let newId = (lastFunctionality != null) ? lastFunctionality.id + 1 : 0;
