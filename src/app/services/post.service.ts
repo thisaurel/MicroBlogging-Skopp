@@ -22,11 +22,12 @@ export class PostService {
     let newPost: any = {
       id: newId,
       id_utilisateur: 1,
-      content: post.content,
+      contenu: post.content,
       date: datestring,
       nb_like: 0,
       piece_jointe: ''
     };
+    console.log(newPost);
     this.data.posts.push(newPost);
   }
 

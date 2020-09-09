@@ -1,14 +1,16 @@
-<div class="form-group">
-    <label for="exampleFormControlTextarea1">Tapez votre micro-Skopp</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-</div>
+<form class="form" [formGroup]="postForm" (ngSubmit)="createSkopp()">
+    <div class="form-group">
+        <textarea class="form-control" formControlName="postInput" rows="3" placeholder="Tapez votre micro-Skopp..."></textarea>
+    </div>
+</form>
+
 <button type="button" class="btn btn-secondary mr-2">Joindre</button>
-<button type="button" class="btn btn-primary">Envoyez votre Skopp</button>
+<button type="button" class="btn btn-primary" (click)="createSkopp()">Envoyez votre Skopp</button>
 <hr>
 
-<div class="card mb-4" *ngFor="let post of postsList">
+<div class="card mb-4" *ngFor="let post of postsList.slice().reverse()">
     <div class="card-body">
-      <h5 class="card-title">{{ post.user.nom }} a écrit:</h5>
+      <h5 class="card-title"><b>{{ post.user.nom }}</b> a écrit:</h5>
       <h6 class="card-subtitle mb-2 text-muted">{{ post.date| date }}</h6>
       <p class="card-text">{{ post.contenu }}</p>
       <a href="#" class="card-link">Card link</a>
