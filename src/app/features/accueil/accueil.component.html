@@ -4,8 +4,8 @@
     </div>
 </form>
 
-<button type="button" class="btn btn-secondary mr-2">Joindre</button>
-<button type="button" class="btn btn-primary" (click)="createSkopp()">Envoyez votre Skopp</button>
+<button type="button" class="btn btn-secondary mr-2"><i class="fa fa-paperclip" aria-hidden="true"></i> Joindre</button>
+<button type="button" class="btn btn-primary" (click)="createSkopp()">Envoyez votre Skopp <i class="fa fa-paper-plane" aria-hidden="true"></i></button>
 <hr>
 
 <div class="card mb-4" *ngFor="let post of postsList.slice().reverse()">
@@ -13,7 +13,10 @@
       <h5 class="card-title"><b>{{ post.user.nom }}</b> a écrit:</h5>
       <h6 class="card-subtitle mb-2 text-muted">{{ post.date| date }}</h6>
       <p class="card-text">{{ post.contenu }}</p>
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
+      <div class="actions" align="right">
+        <span class="mr-2">{{ post.nb_like }}</span> <button type="button" (click)="addFeatureToPost(post.id, 1)" class="btn btn-light"><i class="fa fa-heart" aria-hidden="true"></i></button>
+        <button type="button" class="btn btn-light"><i class="fa fa-reply" aria-hidden="true"></i></button>
+        <button type="button" (click)="addFeatureToPost(post.id, 2)" class="btn btn-light"><i class="fa fa-bookmark" aria-hidden="true"></i></button>
+      </div>
     </div>
   </div>
