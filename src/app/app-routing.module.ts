@@ -6,7 +6,7 @@ import { EnregistrementsComponent } from './features/enregistrements/enregistrem
 
 const routes: Routes = [
   {
-    path: 'accueil',
+    path: '',
     component: AccueilComponent
   },
   {

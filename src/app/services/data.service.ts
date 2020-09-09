@@ -9,6 +9,19 @@ export class DataService {
   constructor() { }
 
   public get posts(): any {
-    return data;
+    return data.publication;
   }
+
+  public get responses(): any {
+    return data.reponse;
+  }
+
+  public get features(): any {
+    return data.fonctionnalite;
+  }
+
+  public get categories(): any {
+    return data.categorie;
+  }
+
 }
