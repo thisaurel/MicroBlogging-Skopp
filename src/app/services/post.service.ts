@@ -45,6 +45,11 @@ export class PostService {
       date: datestring
     };
 
+    if (category === 1) {
+      let myPost = this.data.posts.filter((m) => m.id == id_publication);
+      myPost.nb_like++;
+    }
+
    this.data.features.push(newFeature); 
   }
 
@@ -107,7 +112,7 @@ export class PostService {
     posts.forEach((post: any) => {
       features.forEach((feature: any) => {
         if (feature.id_categorie === 1) {
-          
+
         }
       });
     });
