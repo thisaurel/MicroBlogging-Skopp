@@ -61,7 +61,7 @@
 			"date" : "2020-09-09 12:13:20"
 		},
 		{
-			"id": ,
+			"id": 2,
 			"categorie_id": 2 ,
 			"publication_id" : 1,
 			"utilisateur_id" : 2,
@@ -71,11 +71,11 @@
 	"categorie": [
 		{
 			"id": 1,
-			"nom": "like",
+			"nom": "like"
 		},
 		{
 			"id": 2,
-			"nom": "enregistrement",
+			"nom": "enregistrement"
 		}
 	]
 }
