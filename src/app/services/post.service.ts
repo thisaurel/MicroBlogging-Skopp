@@ -46,7 +46,7 @@ export class PostService {
     };
 
     if (category === 1) {
-      let myPost = this.data.posts.filter((m) => m.id == id_publication);
+      let myPost = this.data.posts.filter((m) => m.id == id_publication)[0];
       myPost.nb_like++;
     }
 
