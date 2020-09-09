@@ -11,4 +11,5 @@ export class DataService {
   public get posts(): any {
     return data;
   }
+
 }
