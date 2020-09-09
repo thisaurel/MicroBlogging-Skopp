@@ -1,12 +1,21 @@
 <div class="container">
-  <h1>Micro-Skopp</h1>
-  <router-outlet></router-outlet>
-<div class="row">
-    <div class="col-sm-3">
-      <a [routerLink]="''"> Accueil </a>
-      <br>
-      <a [routerLink]="'enregistrements'"> Enregistrement </a>
-      <br>
-      <a [routerLink]="'profil'"> Profil </a>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <ul class="list-group">
+          <li class="list-group-item">
+            <a [routerLink]="''"> Accueil </a>
+          </li>
+          <li class="list-group-item">
+            <a [routerLink]="'enregistrements'"> Enregistrement </a>
+          </li>
+          <li class="list-group-item">
+            <a [routerLink]="'profil'"> Profil </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-sm-8">
+        <router-outlet></router-outlet>
+      </div>
     </div>
-</div>
+  </div>
