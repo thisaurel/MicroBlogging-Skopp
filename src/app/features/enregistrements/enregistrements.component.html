@@ -1,7 +1,22 @@
-<div class="card mb-4" *ngFor="let post of postsList.slice().reverse()">
-    <div class="card-body">
-      <h5 class="card-title"><b>{{ post.user.nom }}</b> a écrit:</h5>
-      <h6 class="card-subtitle mb-2 text-muted">{{ post.date| date }}</h6>
-      <p class="card-text">{{ post.contenu }}</p>
+<div *ngFor="let post of postsList.slice().reverse()">
+  <div class="card mb-3" >
+      <div class="card-body">
+        <h5 class="card-title"><b>{{ post.user.nom }}</b> a écrit:</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{ post.date| date }}</h6>
+        <p class="card-text">{{ post.contenu }}</p>
+        <div class="actions" align="right">
+          <span class="mr-2">{{ post.nb_like }}</span> <button type="button" (click)="addFeatureToPost(post.id, 1)" class="btn btn-light"><i class="fa fa-heart" aria-hidden="true"></i></button>
+          <button type="button" class="btn btn-light"><i class="fa fa-reply" aria-hidden="true"></i></button>
+          <button type="button" (click)="addFeatureToPost(post.id, 2)" class="btn btn-dark"><i class="fa fa-bookmark" aria-hidden="true"></i></button>
+        </div>
+      </div>
     </div>
-  </div>
+  
+      <div class="card mb-3 ml-5" *ngFor="let response of post.responses.slice().reverse()">
+        <div class="card-body">
+          <h5 class="card-title"><b>{{ response.user.nom }}</b> a répondu:</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{ response.date | date }}</h6>
+          <p class="card-text">{{ response.contenu }}</p>
+        </div>
+      </div>
+</div>

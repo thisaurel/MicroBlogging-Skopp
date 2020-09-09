@@ -19,6 +19,12 @@ export class AccueilComponent implements OnInit {
     ]),
   });
 
+  public responseForm = new FormGroup({
+    reponseInput: new FormControl('', [
+      Validators.required
+    ]),
+  });
+
   constructor(
     public postService: PostService
   ) { }

@@ -16,12 +16,21 @@
           <p class="card-text">{{ post.contenu }}</p>
           <div class="actions" align="right">
             <span class="mr-2">{{ post.nb_like }}</span> <button type="button" (click)="addFeatureToPost(post.id, 1)" class="btn btn-light"><i class="fa fa-heart" aria-hidden="true"></i></button>
-            <button type="button" class="btn btn-light"><i class="fa fa-reply" aria-hidden="true"></i></button>
+            <button type="button" class="btn btn-light"><i class="fa fa-reply" aria-hidden="true" 
+            (click)="post.responseActive = !post.responseActive"></i></button>
             <button type="button" (click)="addFeatureToPost(post.id, 2)" class="btn btn-light"><i class="fa fa-bookmark" aria-hidden="true"></i></button>
           </div>
         </div>
       </div>
-    
+      <div class="ml-5 mb-3" *ngIf="post.responseActive === true">
+        <form class="form" [formGroup]="responseForm" (ngSubmit)="reponseSkopp()">
+            <div class="form-group">
+                <textarea class="form-control" formControlName="reponseInput" rows="3" placeholder="Tapez votre réponse à ce Skopp..."></textarea>
+            </div>
+        </form>
+        <button type="button" class="btn btn-primary" (click)="reponseSkopp()">Répondre au Skopp <i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+      </div>
+      
         <div class="card mb-3 ml-5" *ngFor="let response of post.responses.slice().reverse()">
           <div class="card-body">
             <h5 class="card-title"><b>{{ response.user.nom }}</b> a répondu:</h5>
