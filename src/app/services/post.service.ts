@@ -172,7 +172,9 @@ export class PostService {
     savedObject.forEach((saved) => {
       saved.features.forEach((feature) => {
         if (feature.id_utilisateur == 1 && feature.id_categorie == 2) {
-          returnedObject.push(saved);
+          if (!returnedObject.includes(saved)) {
+            returnedObject.push(saved); 
+          }
         }
       })
     });
