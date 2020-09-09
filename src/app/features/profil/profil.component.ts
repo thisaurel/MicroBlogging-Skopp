@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PostService } from 'src/app/services/post.service';
 
 @Component({
   selector: 'app-profil',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfilComponent implements OnInit {
 
-  constructor() { }
+  public user = null;
+
+  constructor(
+    public postService: PostService
+  ) { }
 
   ngOnInit(): void {
+    this.user = this.postService.currentUser;
   }
 
 }

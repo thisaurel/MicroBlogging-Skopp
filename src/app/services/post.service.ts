@@ -201,4 +201,8 @@ export class PostService {
     
   }
 
+  public get currentUser(): any {
+    return this.data.users.filter((u) => u.id === 1)[0];
+  }
+
 }

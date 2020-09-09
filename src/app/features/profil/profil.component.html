@@ -1,7 +1,3 @@
-<div class="card">
-    <img src="img.jpg" alt="John" style="width:100%">
-    <h1>cesar</h1>
-    <p class="title">Empereur</p>
-    <p>Rome</p>
-    <p><button>Contact</button></p>
-  </div>
+<img [src]="user.photo" alt="" style="width: 150px" class="rounded">
+<h2>{{ user.nom }} {{ user.prenom }}</h2>
+<p>Adresse mail: {{ user.email }}</p>
