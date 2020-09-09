@@ -30,6 +30,23 @@ export class PostService {
     this.data.posts.push(newPost);
   }
 
+  public createFeature(feature: any, category: number) {
+    let lastFunctionality = this.data.features.slice(-1)[0];
+    let newId = (lastFunctionality != null) ? lastFunctionality.id + 1 : 0;
+    let publication = feature.id_publication;
+    let d = new Date();
+    let datestring = d.getFullYear()  + "-" + (d.getMonth()+1) + "-" + d.getDate() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+    let newFeature: any = {
+      id: newId,
+      id_categorie: category,
+      id_publication: publication,
+      id_utilisateur: 1,
+      date: datestring
+    };
+
+   this.data.features.push(newFeature); 
+  }
+
   public get forHomePage(): any {
 
     let homePageObject = [];
