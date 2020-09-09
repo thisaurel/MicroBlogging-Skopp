@@ -15,10 +15,11 @@
           <h6 class="card-subtitle mb-2 text-muted">{{ post.date| date }}</h6>
           <p class="card-text">{{ post.contenu }}</p>
           <div class="actions" align="right">
-            <span class="mr-2">{{ post.nb_like }}</span> <button type="button" (click)="addFeatureToPost(post.id, 1)" class="btn btn-light"><i class="fa fa-heart" aria-hidden="true"></i></button>
-            <button type="button" class="btn btn-light"><i class="fa fa-reply" aria-hidden="true" 
+            <span class="mr-2">{{ post.nb_like }}</span> <button type="button" (click)="addFeatureToPost(post.id, 1)" 
+            [ngClass]="!isUserLiked(post) ? 'btn btn-light' : 'btn btn-dark'"><i class="fa fa-heart" aria-hidden="true"></i></button>
+            <button type="button" [ngClass]="!post.responseActive ? 'btn btn-light' : 'btn btn-dark'"><i class="fa fa-reply" aria-hidden="true" 
             (click)="post.responseActive = !post.responseActive"></i></button>
-            <button type="button" (click)="addFeatureToPost(post.id, 2)" class="btn btn-light"><i class="fa fa-bookmark" aria-hidden="true"></i></button>
+            <button type="button" (click)="addFeatureToPost(post.id, 2)" [ngClass]="!isUserSaved(post) ? 'btn btn-light' : 'btn btn-dark'"><i class="fa fa-bookmark" aria-hidden="true"></i></button>
           </div>
         </div>
       </div>

@@ -64,6 +64,17 @@ export class AccueilComponent implements OnInit {
 
   public addFeatureToPost(postId: number, category: number): void {
     this.postService.createFeature(postId, category);
+    this.postsList = this.postService.forHomePage;
+  }
+
+  public isUserLiked(post: any): boolean {
+    let l = post.features.filter((feature) => feature.id_utilisateur === 1 && feature.id_categorie === 1 && feature.id_publication === post.id);
+    return l.length > 0;
+  }
+
+  public isUserSaved(post: any): boolean {
+    let l = post.features.filter((feature) => feature.id_utilisateur === 1 && feature.id_categorie === 2 && feature.id_publication === post.id);
+    return l.length > 0;
   }
 
 
