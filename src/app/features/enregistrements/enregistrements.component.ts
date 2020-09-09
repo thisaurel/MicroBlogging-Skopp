@@ -15,7 +15,7 @@ export class EnregistrementsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.postsList = this.postService.forHomePage;
+    this.postsList = this.postService.savedElements;
   }
 
 }

@@ -127,4 +127,66 @@ export class PostService {
     return savePageObject;
   }
 
+  public get savedElements(): any {
+    
+    let savedObject = [];
+
+    let posts = this.data.posts;
+    let responses = this.data.responses;
+    let features = this.data.features;
+    let categories = this.data.categories;
+    let users = this.data.users;
+
+    posts.forEach((post: any) => {
+      let onePost = post;
+      onePost.responses = [];
+      onePost.features = [];
+      onePost.user = {};
+
+      responses.forEach((response: any) => {
+        response.user = {};
+        if (response.id_publication === post.id) {
+          onePost.responses.push(response);
+        }
+        users.forEach((user: any) => {
+          if (user.id === response.id_utilisateur) {
+            response.user = user;
+          }
+        });
+      });
+
+      users.forEach((user: any) => {
+        if (user.id === post.id_utilisateur) {
+          onePost.user = user;
+        }
+      });
+
+      features.forEach((feature: any) => {
+        feature.type = null;
+        if (feature.id_publication === post.id) {
+          onePost.features.push(feature);
+        }
+        categories.forEach((category: any) => {
+          if (feature.id_categorie === category.id) {
+            feature.type = category.nom;
+          }
+        });
+      });
+
+      savedObject.push(onePost);
+    });
+    let returnedObject = [];
+    console.log(savedObject);
+    savedObject.forEach((saved) => {
+      saved.features.forEach((feature) => {
+        if (feature.id_utilisateur == 1 && feature.id_categorie == 2) {
+          returnedObject.push(saved);
+        }
+      })
+    });
+
+    return returnedObject;
+    
+  }
+
 }

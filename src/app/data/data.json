@@ -66,6 +66,13 @@
 			"id_publication" : 1,
 			"id_utilisateur" : 2,
 			"date" : "2020-09-09 12:13:20"
+		},
+		{
+			"id": 3,
+			"id_categorie": 2,
+			"id_publication" : 1,
+			"id_utilisateur" : 1,
+			"date" : "2020-09-09 12:13:20"
 		}
 	],
 	"categorie": [
