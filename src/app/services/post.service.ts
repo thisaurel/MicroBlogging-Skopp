@@ -51,6 +51,7 @@ export class PostService {
     }
 
    this.data.features.push(newFeature); 
+   console.log(this.data.features)
   }
 
   public get forHomePage(): any {
@@ -70,9 +71,15 @@ export class PostService {
       onePost.user = {};
 
       responses.forEach((response: any) => {
+        response.user = {};
         if (response.id_publication === post.id) {
           onePost.responses.push(response);
         }
+        users.forEach((user: any) => {
+          if (user.id === response.id_utilisateur) {
+            response.user = user;
+          }
+        });
       });
 
       users.forEach((user: any) => {

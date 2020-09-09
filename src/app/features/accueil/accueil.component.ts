@@ -42,5 +42,9 @@ export class AccueilComponent implements OnInit {
     }
   }
 
+  public addFeatureToPost(postId: number, category: number) {
+    this.postService.createFeature(postId, category);
+  }
+
 
 }
