@@ -3,5 +3,5 @@ export interface Response {
 	id_publication: number;
 	id_utilisateur: number;
 	contenue: string;
-	date: date;
+	date: Date;
 }
