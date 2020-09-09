@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PostService } from 'src/app/services/post.service';
 
 @Component({
   selector: 'app-enregistrements',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EnregistrementsComponent implements OnInit {
 
-  constructor() { }
+  public postsList = [];
+  
+  constructor(
+    public postService: PostService
+  ) { }
 
   ngOnInit(): void {
+    this.postsList = this.postService.forHomePage;
   }
 
 }
