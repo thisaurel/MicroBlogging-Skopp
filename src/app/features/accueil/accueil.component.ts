@@ -10,8 +10,6 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class AccueilComponent implements OnInit {
 
   public postsList = [];
-  public postInputHTML: string;
-
 
   public postForm = new FormGroup({
     postInput: new FormControl('', [
