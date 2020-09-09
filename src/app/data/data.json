@@ -22,7 +22,7 @@
 		{
 			"id": 1,
 			"id_utilisateur": 1,
-			"contenue" : "Dans trois mois jour pour jour tu auras ton Palais.",
+			"contenu" : "Dans trois mois jour pour jour tu auras ton Palais.",
 			"date" : "2020-09-09 12:13:20",
 			"nb_like": 55,
 			"piece_jointe": ""
@@ -30,7 +30,7 @@
 		{
 			"id": 2,
 			"id_utilisateur": 2,
-			"contenue" : "C'est trop calme... j'aime pas trop beaucoup ça... J'préfère quand c'est un peu trop plus moins calme...",
+			"contenu" : "C'est trop calme... j'aime pas trop beaucoup ça... J'préfère quand c'est un peu trop plus moins calme...",
 			"date" : "2020-09-09 16:13:20",
 			"nb_like": 88,
 			"piece_jointe": ""
@@ -41,18 +41,18 @@
 			"id": 1,
 			"id_publication" : 1,
 			"id_utilisateur": 2,
-			"contenue" : "3 mois... Avec combien de temps de retard ?",
+			"contenu" : "3 mois... Avec combien de temps de retard ?",
 			"date" : "2020-09-09 12:13:20"
 		},
 		{
 			"id": 2,
 			"id_publication" : 2,
 			"id_utilisateur": 1,
-			"contenue" : "lol",
+			"contenu" : "lol",
 			"date" : "2020-09-09 16:13:20"
 		}
 	],
-	"fonctionalite": [
+	"fonctionnalite": [
 		{
 			"id": 1,
 			"categorie_id": 1,
