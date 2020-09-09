@@ -82,6 +82,7 @@ export class PostService {
 
     posts.forEach((post: any) => {
       let onePost = post;
+      onePost.responseActive = false;
       onePost.responses = [];
       onePost.features = [];
       onePost.user = {};
@@ -147,6 +148,7 @@ export class PostService {
 
     posts.forEach((post: any) => {
       let onePost = post;
+      onePost.responseActive = false;
       onePost.responses = [];
       onePost.features = [];
       onePost.user = {};

@@ -56,7 +56,6 @@ export class AccueilComponent implements OnInit {
           id: post_id,
           content: skopp,
         }
-        console.log(post_id);
         this.postService.createReponse(mySkopp);
         this.postsList = this.postService.forHomePage;
         this.responseForm.reset();
