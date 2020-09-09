@@ -46,14 +46,15 @@ export class AccueilComponent implements OnInit {
     }
   }
 
-  public reponseSkopp(post_id: number): void {
+  public reponseSkopp(post: any): void {
     const skopp = this.responseForm.value.reponseInput;
     if (typeof skopp === 'string' ) {
       if (skopp !== '') {
         const mySkopp = {
-          id: post_id,
+          id: post.id,
           content: skopp,
         }
+        post.responseActive = false;
         this.postService.createReponse(mySkopp);
         this.postsList = this.postService.forHomePage;
         this.responseForm.reset();
