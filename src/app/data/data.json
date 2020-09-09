@@ -1,0 +1,81 @@
+{
+	"utilisateur": [
+		{
+			"id": 1,
+			"nom": "Cleopatre",
+			"prenom": "degypte",
+			"email": "longnez@gmail.com",
+			"mot_de_passe": "iLoveCeasar",
+			"photo": "https://amp.agoravox.fr/local/cache-vignettes/L640xH511/le_nez_de_cleopatre-25543.jpg"
+		},
+		{
+			"id": 2,
+			"nom": "Numerobis",
+			"prenom": "unbras",
+			"email": "mainsdanslapoche@gmail.com",
+			"mot_de_passe": "motdepasse",
+			"photo": "https://fr.web.img6.acsta.net/r_1280_720/newsv7/16/12/06/12/45/4547490.jpg"
+		}
+
+	],
+	"publication": [
+		{
+			"id": 1,
+			"id_utilisateur": 1,
+			"contenue" : "Dans trois mois jour pour jour tu auras ton Palais.",
+			"date" : "2020-09-09 12:13:20",
+			"nb_like": "55",
+			"piece_jointe": ""
+		},
+		{
+			"id": 2,
+			"id_utilisateur": 2,
+			"contenue" : "C'est trop calme... j'aime pas trop beaucoup ça... J'préfère quand c'est un peu trop plus moins calme...",
+			"date" : "2020-09-09 16:13:20",
+			"nb_like": "88",
+			"piece_jointe": ""
+		}
+	],
+	"reponse": [
+		{
+			"id": 1,
+			"id_publication" : 1,
+			"id_utilisateur": 2,
+			"contenue" : "3 mois... Avec combien de temps de retard ?",
+			"date" : "2020-09-09 12:13:20"
+		},
+		{
+			"id": 2,
+			"id_publication" : 2,
+			"id_utilisateur": 1,
+			"contenue" : "lol",
+			"date" : "2020-09-09 16:13:20"
+		}
+	],
+	"fonctionalite": [
+		{
+			"id": 1,
+			"categorie_id": 1,
+			"publication_id" : 2,
+			"utilisateur_id" : 1,
+			"date" : "2020-09-09 12:13:20"
+		},
+		{
+			"id": ,
+			"categorie_id": 2 ,
+			"publication_id" : 1,
+			"utilisateur_id" : 2,
+			"date" : "2020-09-09 12:13:20"
+		}
+	],
+	"categorie": [
+		{
+			"id": 1,
+			"nom": "like",
+		},
+		{
+			"id": 2,
+			"nom": "enregistrement",
+		}
+	]
+}
