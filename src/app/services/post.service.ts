@@ -31,10 +31,10 @@ export class PostService {
     this.data.posts.push(newPost);
   }
 
-  public createFeature(feature: any, category: number) {
+  public createFeature(id_publication: number, category: number) {
     let lastFunctionality = this.data.features.slice(-1)[0];
     let newId = (lastFunctionality != null) ? lastFunctionality.id + 1 : 0;
-    let publication = feature.id_publication;
+    let publication = id_publication;
     let d = new Date();
     let datestring = d.getFullYear()  + "-" + (d.getMonth()+1) + "-" + d.getDate() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
     let newFeature: any = {
@@ -44,8 +44,8 @@ export class PostService {
       id_utilisateur: 1,
       date: datestring
     };
-
    this.data.features.push(newFeature); 
+   console.log(this.data.features)
   }
 
   public get forHomePage(): any {
@@ -65,9 +65,15 @@ export class PostService {
       onePost.user = {};
 
       responses.forEach((response: any) => {
+        response.user = {};
         if (response.id_publication === post.id) {
           onePost.responses.push(response);
         }
+        users.forEach((user: any) => {
+          if (user.id === response.id_utilisateur) {
+            response.user = user;
+          }
+        });
       });
 
       users.forEach((user: any) => {
@@ -92,6 +98,27 @@ export class PostService {
     });
 
     return homePageObject;
+  }
+
+  public get forSavePage(): any {
+
+    let savePageObject = [];
+
+    let posts = this.data.posts;
+    let responses = this.data.responses;
+    let features = this.data.features;
+    let categories = this.data.categories;
+    let users = this.data.users;
+
+    posts.forEach((post: any) => {
+      features.forEach((feature: any) => {
+        if (feature.id_categorie === 1) {
+          
+        }
+      });
+    });
+
+    return savePageObject;
   }
 
 }
